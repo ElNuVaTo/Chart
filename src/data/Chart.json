@@ -1,156 +1,165 @@
+
+
+
+
+
+
 {
-  "title": "Pensamiento Computacional",
-  "description": "Una ruta de aprendizaje para desarrollar el pensamiento computacional y la mentalidad de un buen programador. A través de libros y conceptos fundamentales, recorre desde la lógica y la resolución de problemas hasta la abstracción, el diseño de software, la colaboración y la adaptación a un mundo impulsado por la inteligencia artificial.",
+  "title": "Finanzas Personales",
+  "description": "Una ruta sencilla para entender cómo manejar mejor el dinero. Desde ordenar tus gastos y crear un fondo de emergencia hasta comprender inversiones, riesgo e interés compuesto.",
+  "cover_url": "https://ttjslghwonasewdvsmww.supabase.co/storage/v1/object/public/chart-covers/32752732-7186-4860-9691-96ef3e00b432/1ef5221-1916-4a4f-9dc9-4f5923f1231b.png",
   "levels": [
     {
-      "name": "Los Fundamentos Lógicos",
+      "name": "Ordenar el Dinero",
       "books": [
         {
-          "title": "The Annotated Turing",
-          "src": "https://books.google.com/books/content?id=LFQ7DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "key": "LFQ7DwAAQBAJ",
-          "author": "Charles Petzold",
-          "publishYear": "2008",
-          "notes": "Te enseña a pensar en el nacimiento de la computación antes de que existieran los cables y chips."
-        },
-        {
-          "title": "Gödel, Escher, Bach",
-          "coverUrl": "https://books.google.com/books/content?id=qa30IAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-          "key": "qa30IAAACAAJ",
-          "author": "Douglas R. Hofstadter",
-          "publishYear": "2007",
-          "notes": "Un viaje fascinante que conecta las matemáticas, el arte y la música para explicar cómo los sistemas formales, es decir, las reglas lógicas, pueden generar autorreferencia, inteligencia y mente."
-        },
-        {
-          "title": "Ada's Algorithm",
-          "coverUrl": "https://books.google.com/books/content?id=NrXoAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "key": "NrXoAwAAQBAJ",
-          "author": "James Essinger",
-          "publishYear": "2014",
-          "notes": "Tuvo la visión de que las máquinas no solo calcularían números, sino que podrían manipular símbolos, crear música y arte si se les daba el algoritmo correcto."
-        }
-      ],
-      "info": "El programador aprende a desmitificar la inteligencia. El gran salto mental es comprender que cualquier problema del universo, por complejo que sea, puede ser fragmentado en una secuencia finita de pasos lógicos y mecánicos elementales."
-    },
-    {
-      "name": "La Era de la Abstracción",
-      "books": [
-        {
-          "title": "Structure and Interpretation of Computer Programs, second edition",
-          "coverUrl": "https://books.google.com/books/content?id=iL34DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "key": "iL34DwAAQBAJ",
-          "author": "Harold Abelson, Gerald Jay Sussman",
-          "publishYear": "1996",
-          "notes": "Cambia tu forma de estructurar el pensamiento para siempre."
-        },
-        {
-          "title": "The UNIX Programming Environment",
-          "coverUrl": "https://books.google.com/books/content?id=mcO0Vh9efE0C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-          "key": "mcO0Vh9efE0C",
-          "author": "Brian W. Kernighan, Rob Pike",
-          "publishYear": "1984",
-          "notes": "Enseña el superpoder mental de crear herramientas pequeñas y especializadas que se conectan entre sí para resolver problemas gigantescos."
-        },
-        {
-          "title": "The Mythical Man-Month",
-          "coverUrl": "https://books.google.com/books/content?id=Yq35BY5Fk3gC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "key": "Yq35BY5Fk3gC",
-          "author": "Frederick P. Brooks Jr.",
-          "publishYear": "1995",
-          "notes": "Es el primer libro en advertir que el software es un ente invisible y complejo, y que añadir más personas a un proyecto retrasado solo lo retrasa más."
-        }
-      ],
-      "info": "El programador deja de pensar en el hardware, como cables, chips y memoria, y aprende a crear sus propias realidades conceptuales. La mente se entrena para construir capas de abstracción, permitiendo resolver problemas gigantescos ocultando los detalles mundanos bajo interfaces elegantes."
-    },
-    {
-      "name": "El Diseño y la Arquitectura",
-      "books": [
-        {
-          "title": "Design Patterns Explained",
-          "coverUrl": "https://books.google.com/books/content?id=JPOaP7cyk6wC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "key": "JPOaP7cyk6wC",
-          "author": "Alan Shalloway, James Trott",
-          "publishYear": "2002",
-          "notes": "Enseña a clasificar las estructuras de código y a hablar un idioma arquitectónico universal con otros programadores."
-        },
-        {
-          "title": "Clean Code",
-          "coverUrl": "https://books.google.com/books/content?id=_i6bDeoCQzsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "key": "_i6bDeoCQzsC",
-          "author": "Robert C. Martin",
-          "publishYear": "2008",
-          "notes": "El código se escribe para que lo lean humanos, y solo incidentalmente para que lo ejecuten las máquinas."
-        },
-        {
-          "title": "Code Complete",
-          "coverUrl": "https://books.google.com/books/content?id=LpVCAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "key": "LpVCAwAAQBAJ",
-          "author": "Steve McConnell",
-          "publishYear": "2004",
-          "notes": "Una enciclopedia práctica sobre el arte de la construcción de software. Enseña que programar es una artesanía que requiere disciplina."
-        }
-      ],
-      "info": "La mentalidad evoluciona de resolver el problema hoy a asegurar que la solución sobreviva al mañana. El programador se convierte en un arquitecto empático, consciente de que los sistemas cambian y que el código debe estar diseñado para ser modificado sin colapsar."
-    },
-    {
-      "name": "Colaboración y la Adaptabilidad",
-      "books": [
-        {
-          "title": "The Cathedral & the Bazaar",
-          "coverUrl": "https://books.google.com/books/content?id=F6qgFtLwpJgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "key": "F6qgFtLwpJgC",
-          "author": "Eric S. Raymond",
-          "publishYear": "2001",
-          "notes": "Analiza el éxito del código abierto, especialmente el caso de Linux. Enseña que el pensamiento cerrado y jerárquico puede ser inferior a la inteligencia colectiva y descentralizada de una comunidad conectada a internet."
-        },
-        {
-          "title": "Extreme Programming Explained",
-          "coverUrl": "https://books.google.com/books/content?id=G8EL4H4vf7UC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "key": "G8EL4H4vf7UC",
-          "author": "Kent Beck",
-          "publishYear": "2000",
-          "notes": "Propone un cambio de mentalidad radical: en lugar de planificar rígidamente a dos años, debes aprender a diseñar software que abrace y acepte el cambio constante."
-        },
-        {
-          "title": "Working Effectively with Legacy Code",
-          "coverUrl": "https://books.google.com/books/content?id=fB6s_Z6g0gIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "key": "fB6s_Z6g0gIC",
-          "author": "Michael Feathers",
-          "publishYear": "2004",
-          "notes": "Enseña a enfrentarse mentalmente al código heredado, es decir, código viejo escrito por otros. Desarrolla la resiliencia y la psicología necesaria para modificar sistemas masivos sin romper el negocio en el proceso."
-        }
-      ],
-      "info": "Se rompe el mito del genio programador solitario. El profesional entiende que el desarrollo de software es un deporte de equipo y un proceso social. El éxito ya no depende de la genialidad técnica individual, sino de la comunicación, la retroalimentación rápida y la gestión del cambio."
-    },
-    {
-      "name": "La Simbiosis e Inteligencia Artificial",
-      "books": [
-        {
-          "title": "The Alignment Problem",
-          "coverUrl": "https://books.google.com/books/content?id=Lh_WDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "key": "Lh_WDwAAQBAJ",
-          "author": "Brian Christian",
+          "title": "The Psychology of Money",
+          "src": "",
+          "key": "psychology-money",
+          "author": "Morgan Housel",
           "publishYear": "2020",
-          "notes": "Explora el desafío filosófico y técnico de asegurar que los sistemas de IA compartan los valores humanos. El programador aprende que su rol ya no es solo lógico, sino también ético y de control."
+          "notes": "Más que hablar de fórmulas, explica por qué nuestras decisiones financieras están tan relacionadas con nuestro comportamiento."
         },
         {
-          "title": "The Pragmatic Programmer",
-          "coverUrl": "https://books.google.com/books/content?id=LhOlDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "key": "LhOlDwAAQBAJ",
-          "author": "David Thomas, Andrew Hunt",
-          "publishYear": "2019",
-          "notes": "Aunque es un clásico, su edición moderna aborda la mentalidad del programador en la era actual: cómo mantenerse relevante, cómo usar herramientas de automatización sin perder el pensamiento crítico y cómo ser un artesano digital en un mundo automatizado."
-        },
-        {
-          "title": "Superintelligence",
-          "coverUrl": "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-          "key": "7_H8AwAAQBAJ",
-          "author": "Nick Bostrom",
-          "publishYear": "2014",
-          "notes": "Una lectura densa pero fundamental para expandir la mente hacia el futuro a largo plazo de la computación. Te obliga a pensar en las implicaciones últimas de crear sistemas que superen las capacidades cognitivas humanas."
+          "title": "Your Money or Your Life",
+          "src": "",
+          "key": "your-money-life",
+          "author": "Vicki Robin, Joe Dominguez",
+          "publishYear": "1992",
+          "notes": "Ayuda a pensar el dinero en relación con el tiempo y la vida que queremos construir."
         }
       ],
-      "info": "El programador vive una metamorfosis: deja de ser un obrero de la sintaxis para convertirse en un curador, director técnico y validador ético. El nuevo pensamiento se centra en formular las preguntas correctas, diseñar arquitecturas robustas y auditar los resultados generados por inteligencias artificiales para asegurar que se alineen con la intención humana."
+      "info": "Antes de invertir hay que saber cuánto entra, cuánto sale y qué lugar ocupa realmente el dinero en nuestra vida."
+    },
+    {
+      "name": "Invertir con Criterio",
+      "books": [
+        {
+          "title": "The Intelligent Investor",
+          "src": "",
+          "key": "intelligent-investor",
+          "author": "Benjamin Graham",
+          "publishYear": "1949",
+          "notes": "Un clásico sobre inversión a largo plazo y sobre la importancia de controlar el riesgo."
+        },
+        {
+          "title": "A Random Walk Down Wall Street",
+          "src": "",
+          "key": "random-walk-wall-street",
+          "author": "Burton G. Malkiel",
+          "publishYear": "1973",
+          "notes": "Explora cuánto podemos realmente predecir en los mercados y qué estrategias tienen sentido a largo plazo."
+        }
+      ],
+      "info": "Invertir no consiste en adivinar qué va a subir mañana. Se trata de entender el riesgo, el tiempo y las probabilidades antes de tomar decisiones."
+    }
+  ]
+}
+
+
+
+
+{
+  "title": "Astronomía para Curiosos",
+  "description": "Una ruta para entender el universo desde nuestro propio planeta hasta las galaxias más lejanas. Empieza con el cielo que podemos observar y termina explorando estrellas, agujeros negros y la historia del cosmos.",
+  "cover_url": "https://ttjslghwonasewdvsmww.supabase.co/storage/v1/object/public/chart-covers/32752732-7186-4860-9691-96ef3e00b432/1ef5221-1916-4a4f-9dc9-4f5923f1231b.png",
+  "levels": [
+    {
+      "name": "Mirar el Cielo",
+      "books": [
+        {
+          "title": "Cosmos",
+          "src": "",
+          "key": "cosmos",
+          "author": "Carl Sagan",
+          "publishYear": "1980",
+          "notes": "Una introducción cercana al universo y a nuestra relación con él."
+        },
+        {
+          "title": "NightWatch",
+          "src": "",
+          "key": "nightwatch",
+          "author": "Terence Dickinson",
+          "publishYear": "1983",
+          "notes": "Muy práctico para aprender a orientarse en el cielo y empezar a observarlo por cuenta propia."
+        }
+      ],
+      "info": "Antes de entender galaxias y agujeros negros, vale la pena simplemente aprender a mirar el cielo y reconocer lo que tenemos sobre nuestras cabezas."
+    },
+    {
+      "name": "Estrellas y Galaxias",
+      "books": [
+        {
+          "title": "Astrophysics for People in a Hurry",
+          "src": "",
+          "key": "astrophysics-hurry",
+          "author": "Neil deGrasse Tyson",
+          "publishYear": "2017",
+          "notes": "Un recorrido rápido por algunas de las ideas más importantes de la astrofísica."
+        },
+        {
+          "title": "Black Holes",
+          "src": "",
+          "key": "black-holes",
+          "author": "Brian Cox, Jeff Forshaw",
+          "publishYear": "2022",
+          "notes": "Una mirada accesible a uno de los fenómenos más extraños del universo."
+        }
+      ],
+      "info": "Cuando miramos una estrella estamos mirando luz que viajó durante años o incluso millones de años. La astronomía es, en cierta forma, una manera de mirar hacia atrás en el tiempo."
+    }
+  ]
+}
+
+
+{
+  "title": "Introducción a la Psicología",
+  "description": "Una ruta para entender mejor cómo pensamos, aprendemos, sentimos y tomamos decisiones. Recorre algunas de las ideas fundamentales de la psicología y las conecta con situaciones de la vida cotidiana.",
+  "cover_url": "https://ttjslghwonasewdvsmww.supabase.co/storage/v1/object/public/chart-covers/32752732-7186-4860-9691-96ef3e00b432/1ef5221-1916-4a4f-9dc9-4f5923f1231b.png",
+  "levels": [
+    {
+      "name": "Cómo Pensamos",
+      "books": [
+        {
+          "title": "Thinking, Fast and Slow",
+          "src": "",
+          "key": "thinking-fast-slow",
+          "author": "Daniel Kahneman",
+          "publishYear": "2011",
+          "notes": "Explora los distintos modos en que nuestra mente toma decisiones y los errores que podemos cometer sin darnos cuenta."
+        },
+        {
+          "title": "Predictably Irrational",
+          "src": "",
+          "key": "predictably-irrational",
+          "author": "Dan Ariely",
+          "publishYear": "2008",
+          "notes": "Muestra cómo muchas de nuestras decisiones aparentemente racionales están influenciadas por factores que ni siquiera notamos."
+        }
+      ],
+      "info": "Nuestra mente es bastante buena para resolver problemas, pero también tiene atajos que pueden llevarnos a conclusiones equivocadas."
+    },
+    {
+      "name": "Aprendizaje y Conducta",
+      "books": [
+        {
+          "title": "Behave",
+          "src": "",
+          "key": "behave",
+          "author": "Robert M. Sapolsky",
+          "publishYear": "2017",
+          "notes": "Un recorrido enorme por los factores biológicos, sociales y culturales que influyen en nuestro comportamiento."
+        },
+        {
+          "title": "The Man Who Mistook His Wife for a Hat",
+          "src": "",
+          "key": "man-mistook-wife-hat",
+          "author": "Oliver Sacks",
+          "publishYear": "1985",
+          "notes": "Casos neurológicos fascinantes que muestran lo compleja que puede ser nuestra percepción de la realidad."
+        }
+      ],
+      "info": "Entender la conducta humana requiere mirar varias capas a la vez: el cerebro, la experiencia, el entorno y las relaciones con otras personas."
     }
   ]
 }

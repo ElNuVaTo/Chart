@@ -3,7 +3,7 @@ const Book = ({ book }) => {
     <article className="group relative aspect-2/3 w-full max-w-50 overflow-hidden rounded-none border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-foreground">
       <img
         className="absolute grayscale-30 brightness-85 inset-0 size-full object-cover transition-all duration-300 group-hover:brightness-50"
-        src={book.coverUrl}
+        src={book.src}
         alt=""
       />
 

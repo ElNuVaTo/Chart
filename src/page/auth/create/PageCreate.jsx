@@ -99,7 +99,6 @@ const PageCreate = () => {
         return;
       }
 
-      // Mostrar el error real de Supabase
       setAlert({
         type: "error",
         title: "Error al crear la cuenta",
@@ -112,7 +111,7 @@ const PageCreate = () => {
     setAlert({
       type: "success",
       title: "Cuenta creada correctamente",
-      description: "Revisa tu correo para confirmar tu cuenta.",
+      description: "Recuerda confirmar tu cuenta.",
     });
   };
 

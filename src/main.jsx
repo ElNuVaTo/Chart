@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
 
@@ -12,60 +12,64 @@ import Nav from "./layout/Nav";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PageHome from "./page/home/PageHome";
 
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: (
+        <>
+          <Nav />
+          <PageHome />
+        </>
+      ),
+    },
+
+    {
+      path: "/:ID",
+      element: (
+        <>
+          <Nav />
+          <PagesVisualize />
+        </>
+      ),
+    },
+
+    {
+      path: "/create-chart",
+      element: (
+        <ProtectedRoute>
+          <Nav />
+          <PagesForm />
+        </ProtectedRoute>
+      ),
+    },
+
+    {
+      path: "/auth/login",
+      element: (
+        <>
+          <Nav isAuth />
+          <PageLogin />
+        </>
+      ),
+    },
+    {
+      path: "/auth/create",
+      element: (
+        <>
+          <Nav isAuth />
+          <PageCreate />
+        </>
+      ),
+    },
+  ],
+  {
+    basename: "/Chart",
+  },
+);
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/auth/login"
-          element={
-            <>
-              <Nav isAuth />
-              <PageLogin />
-            </>
-          }
-        />
-
-        <Route
-          path="/auth/create"
-          element={
-            <>
-              <Nav isAuth />
-              <PageCreate />
-            </>
-          }
-        />
-
-        <Route
-          path="/create-chart"
-          element={
-            <ProtectedRoute>
-              <Nav />
-              <PagesForm />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/"
-          element={
-            <>
-              <Nav />
-              <PageHome />
-            </>
-          }
-        />
-
-        <Route
-          path="/usuario/id post ruta provisional"
-          element={
-            <>
-              <Nav />
-              <PagesVisualize />
-            </>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+    <RouterProvider router={router} />
   </StrictMode>,
 );

@@ -20,26 +20,9 @@ const CollectionMap = ({ charts }) => {
   }, [charts, sort]);
 
   return (
-    <section className="mt-24">
+    <section >
       <div className="mb-5">
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Comunidad</span>
-
-        <div className="mt-2 flex items-end justify-between gap-6">
-          <h2 className="text-3xl font-semibold tracking-tight">Publicados por la comunidad</h2>
-
-          <div className="flex items-center gap-2">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Ordenar</span>
-
-            <select
-              value={sort}
-              onChange={(event) => setSort(event.target.value)}
-              className="h-9 border bg-background px-3 text-sm outline-none transition-colors hover:border-foreground focus:border-foreground"
-            >
-              <option value="recent">Más recientes</option>
-              <option value="oldest">Más antiguos</option>
-            </select>
-          </div>
-        </div>
       </div>
 
       {/* Grid de publicaciones */}

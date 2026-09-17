@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import CollectionMap from "./components/collection/CollectionMap";
-import TrendingMap from "./components/trending/TrendingMap";
 
 import { supabase } from "@/lib/supabase";
 
@@ -43,9 +42,7 @@ const PageHome = () => {
   }
 
   return (
-    <main className="mx-auto min-h-screen max-w-6xl px-6 py-16">
-      <TrendingMap charts={charts} />
-
+    <main className="mx-auto min-h-screen max-w-6xl px-6 py-5">
       <CollectionMap charts={charts} />
     </main>
   );

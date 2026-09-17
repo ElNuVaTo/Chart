@@ -1,72 +1,73 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 import "./index.css";
 
+import Nav from "./layout/nav/Nav";
+import Navside from "./layout/Navside/Navside";
+import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
+
+import PageHome from "./page/home/PageHome";
+import PagesVisualize from "./page/visualize/PagesVisualize";
+import PagesForm from "./page/Post/PagesForm";
 import PageCreate from "./page/auth/create/PageCreate";
 import PageLogin from "./page/auth/login/PageLogin";
-import PagesForm from "./page/Post/PagesForm";
-import PagesVisualize from "./page/visualize/PagesVisualize";
-import Nav from "./layout/Nav";
+
 import ProtectedRoute from "./components/ProtectedRoute";
-import PageHome from "./page/home/PageHome";
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: (
-        <>
-          <Nav />
-          <PageHome />
-        </>
-      ),
-    },
+export const MainLayout = () => {
+  return (
+    <>
+      <div className="min-h-screen">
+        <Nav />
 
-    {
-      path: ":user/:id",
-      element: (
-        <>
-          <Nav />
-          <PagesVisualize />
-        </>
-      ),
-    },
+        <SidebarProvider>
+          <Navside />
 
-    {
-      path: "/create-chart",
-      element: (
-        <ProtectedRoute>
-          <Nav />
-          <PagesForm />
-        </ProtectedRoute>
-      ),
-    },
+          <SidebarInset>
+            <SidebarTrigger />
 
-    {
-      path: "/auth/login",
-      element: (
-        <>
-          <Nav isAuth />
-          <PageLogin />
-        </>
-      ),
-    },
-    {
-      path: "/auth/create",
-      element: (
-        <>
-          <Nav isAuth />
-          <PageCreate />
-        </>
-      ),
-    },
-  ],
+            <main className="content">
+              <Outlet />
+            </main>
+          </SidebarInset>
+        </SidebarProvider>
+      </div>
+    </>
+  );
+};
+const router = createBrowserRouter([
   {
-    basename: "/",
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/",
+        element: <PageHome />,
+      },
+      {
+        path: ":user/:id",
+        element: <PagesVisualize />,
+      },
+      {
+        path: "/create-chart",
+        element: (
+          <ProtectedRoute>
+            <PagesForm />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/auth/login",
+        element: <PageLogin />,
+      },
+      {
+        path: "/auth/create",
+        element: <PageCreate />,
+      },
+    ],
   },
-);
+]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

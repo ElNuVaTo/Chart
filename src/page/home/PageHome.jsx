@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import CollectionMap from "./components/collection/CollectionMap";
+import CollectionMap from './components/collection/CollectionMap';
 
-import { supabase } from "@/lib/supabase";
+import { supabase } from '@/lib/supabase';
 
 const PageHome = () => {
   const [charts, setCharts] = useState([]);
@@ -10,11 +10,13 @@ const PageHome = () => {
 
   useEffect(() => {
     const testStorage = async () => {
-      const { data, error } = await supabase.storage.from("chart-covers").list();
+      const { data, error } = await supabase.storage
+        .from('chart-covers')
+        .list();
 
-      console.log("SUPABASE URL:", import.meta.env.VITE_SUPABASE_URL);
-      console.log("STORAGE FILES:", data);
-      console.log("STORAGE ERROR:", error);
+      console.log('SUPABASE URL:', import.meta.env.VITE_SUPABASE_URL);
+      console.log('STORAGE FILES:', data);
+      console.log('STORAGE ERROR:', error);
     };
 
     testStorage();
@@ -22,10 +24,10 @@ const PageHome = () => {
 
   useEffect(() => {
     const getCharts = async () => {
-      const { data, error } = await supabase.from("chart").select("*");
+      const { data, error } = await supabase.from('chart').select('*');
 
       if (error) {
-        console.error("Error obteniendo charts:", error);
+        console.error('Error obteniendo charts:', error);
         setLoading(false);
         return;
       }

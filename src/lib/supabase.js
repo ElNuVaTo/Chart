@@ -1,13 +1,13 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient } from '@supabase/supabase-js';
 
 const url = import.meta.env.VITE_SUPABASE_URL;
 const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
 
-console.log("SUPABASE URL:", url);
-console.log("SUPABASE KEY EXISTE:", Boolean(key));
+console.log('SUPABASE URL:', url);
+console.log('SUPABASE KEY EXISTE:', Boolean(key));
 
 export const supabase = createClient(url, key, {
   auth: {
-    flowType: "pkce",
+    flowType: 'pkce',
   },
 });

@@ -1,20 +1,24 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 
-import "./index.css";
+import './index.css';
 
-import Nav from "./layout/nav/Nav";
-import Navside from "./layout/Navside/Navside";
-import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
+import Nav from './layout/nav/Nav';
+import Navside from './layout/Navside/Navside';
+import {
+  SidebarProvider,
+  SidebarInset,
+  SidebarTrigger,
+} from '@/components/ui/sidebar';
 
-import PageHome from "./page/home/PageHome";
-import PagesVisualize from "./page/visualize/PagesVisualize";
-import PagesForm from "./page/Post/PagesForm";
-import PageCreate from "./page/auth/create/PageCreate";
-import PageLogin from "./page/auth/login/PageLogin";
+import PageHome from './page/home/PageHome';
+import PagesVisualize from './page/visualize/PagesVisualize';
+import PagesForm from './page/Post/PagesForm';
+import PageCreate from './page/auth/create/PageCreate';
+import PageLogin from './page/auth/login/PageLogin';
 
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from './components/ProtectedRoute';
 
 export const MainLayout = () => {
   return (
@@ -42,15 +46,15 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <PageHome />,
       },
       {
-        path: ":user/:id",
+        path: ':user/:id',
         element: <PagesVisualize />,
       },
       {
-        path: "/create-chart",
+        path: '/create-chart',
         element: (
           <ProtectedRoute>
             <PagesForm />
@@ -58,19 +62,19 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/auth/login",
+        path: '/auth/login',
         element: <PageLogin />,
       },
       {
-        path: "/auth/create",
+        path: '/auth/create',
         element: <PageCreate />,
       },
     ],
   },
 ]);
 
-createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </StrictMode>
 );

@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import { ButtonGroup } from "@/components/ui/button-group";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -19,15 +18,19 @@ const NavGuest = () => {
   const navigate = useNavigate();
   return (
     <>
-      <ButtonGroup>
-        <Button onClick={() => navigate("/auth/login")} variant="outline" className="cursor-pointer">
+      <div className="flex items-center gap-2">
+        <Button onClick={() => navigate("/auth/login")} variant="ghost" className="cursor-pointer text-zinc-400 hover:bg-white/5 hover:text-zinc-200">
           Iniciar sesión
         </Button>
 
-        <Button onClick={() => navigate("/auth/create")} variant="outline" className="cursor-pointer">
+        <Button
+          onClick={() => navigate("/auth/create")}
+          variant="outline"
+          className="cursor-pointer border-white/10 bg-white/[0.03] text-zinc-300 hover:bg-white/[0.07] hover:text-white"
+        >
           Crear cuenta
         </Button>
-      </ButtonGroup>
+      </div>
     </>
   );
 };

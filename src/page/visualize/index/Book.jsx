@@ -10,14 +10,24 @@ const Book = ({ book }) => {
       <div className="relative z-10 flex h-full flex-col justify-between p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <div className="flex-1 ">
           <div className="mb-2 flex items-center justify-between">
-            <span className="font-mono text-[10px] text-white/70">{book.publishYear}</span>
+            <span className="font-mono text-[10px] text-white/70">
+              {book.publishYear}
+            </span>
           </div>
 
-          <h3 className="text-lg mb-2 font-semibold leading-tight text-white">{book.title}</h3>
+          <h3 className="text-lg mb-2 font-semibold leading-tight text-white">
+            {book.title}
+          </h3>
 
           <p className="text-sm text-white/70">{book.author}</p>
         </div>
-        <div className="flex-2">{book.notes && <p className="border-t border-white/20 pt-1.75 text-xs leading-4.5 text-white/70">{book.notes}</p>}</div>
+        <div className="flex-2">
+          {book.notes && (
+            <p className="border-t border-white/20 pt-1.75 text-xs leading-4.5 text-white/70">
+              {book.notes}
+            </p>
+          )}
+        </div>
       </div>
 
       <span className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/60" />

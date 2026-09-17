@@ -1,7 +1,7 @@
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/hooks/useAuth";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '@/hooks/useAuth';
+import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,23 +10,33 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu';
 
-import { UserPen, LogOut, Settings, PersonStanding, Palette } from "lucide-react";
+import {
+  UserPen,
+  LogOut,
+  Settings,
+  PersonStanding,
+  Palette,
+} from 'lucide-react';
 
 const NavGuest = () => {
   const navigate = useNavigate();
   return (
     <>
       <div className="flex items-center gap-2">
-        <Button onClick={() => navigate("/auth/login")} variant="ghost" className="cursor-pointer text-zinc-400 hover:bg-white/5 hover:text-zinc-200">
+        <Button
+          onClick={() => navigate('/auth/login')}
+          variant="ghost"
+          className="cursor-pointer text-zinc-400 hover:bg-white/5 hover:text-zinc-200"
+        >
           Iniciar sesión
         </Button>
 
         <Button
-          onClick={() => navigate("/auth/create")}
+          onClick={() => navigate('/auth/create')}
           variant="outline"
-          className="cursor-pointer border-white/10 bg-white/[0.03] text-zinc-300 hover:bg-white/[0.07] hover:text-white"
+          className="cursor-pointer border-white/10 bg-white/3 text-zinc-300 hover:bg-white/[0.07] hover:text-white"
         >
           Crear cuenta
         </Button>
@@ -38,7 +48,6 @@ const NavGuest = () => {
 const NavUser = () => {
   const { user, logout } = useAuth();
 
-  console.log(user?.user_metadata);
   return (
     <>
       <DropdownMenu>
@@ -54,7 +63,9 @@ const NavUser = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent className="min-w-40">
           <DropdownMenuGroup>
-            <DropdownMenuLabel className="flex items-end gap-2 mb-2">{user?.user_metadata.name}</DropdownMenuLabel>
+            <DropdownMenuLabel className="flex items-end gap-2 mb-2">
+              {user?.user_metadata.name}
+            </DropdownMenuLabel>
             <DropdownMenuItem className="cursor-pointer">
               <UserPen /> Profile
             </DropdownMenuItem>
@@ -73,7 +84,11 @@ const NavUser = () => {
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem variant="destructive" className="cursor-pointer" onClick={logout}>
+            <DropdownMenuItem
+              variant="destructive"
+              className="cursor-pointer"
+              onClick={logout}
+            >
               <LogOut /> Cerrar sesion
             </DropdownMenuItem>
           </DropdownMenuGroup>
@@ -86,18 +101,18 @@ const NavUser = () => {
 const navActions = [
   {
     component: NavGuest,
-    access: "guest",
+    access: 'guest',
   },
   {
     component: NavUser,
-    access: "private",
+    access: 'private',
   },
 ];
 
 const NavActions = () => {
   const { user, logout } = useAuth();
 
-  const currentAccess = user ? "private" : "guest";
+  const currentAccess = user ? 'private' : 'guest';
 
   return (
     <>

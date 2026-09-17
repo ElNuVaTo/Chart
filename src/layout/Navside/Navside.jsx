@@ -9,10 +9,10 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   useSidebar,
-} from "@/components/ui/sidebar";
+} from '@/components/ui/sidebar';
 
-import { Telescope, Sparkles, BookPlus, CircleStar } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Telescope, Sparkles, BookPlus, CircleStar } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Navside = () => {
   const navigate = useNavigate();
@@ -26,9 +26,11 @@ const Navside = () => {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
-              
               <SidebarMenuItem>
-                <SidebarMenuButton className="cursor-pointer" onClick={() => navigate("/")}>
+                <SidebarMenuButton
+                  className="cursor-pointer"
+                  onClick={() => navigate('/')}
+                >
                   <Telescope /> Explorar
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -47,18 +49,22 @@ const Navside = () => {
               </SidebarMenuItem>
 
               <SidebarMenuItem>
-                <SidebarMenuButton className="cursor-pointer" onClick={() => navigate("/create-chart")}>
+                <SidebarMenuButton
+                  className="cursor-pointer"
+                  onClick={() => navigate('/create-chart')}
+                >
                   <BookPlus /> Crear mi chart
                 </SidebarMenuButton>
               </SidebarMenuItem>
-
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
 
       <SidebarFooter>
-        <button onClick={toggleSidebar}>{state === "expanded" ? "Cerrar" : "Abrir"}</button>
+        <button onClick={toggleSidebar}>
+          {state === 'expanded' ? 'Cerrar' : 'Abrir'}
+        </button>
       </SidebarFooter>
     </Sidebar>
   );

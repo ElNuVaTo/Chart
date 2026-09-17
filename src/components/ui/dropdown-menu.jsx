@@ -1,31 +1,25 @@
-import * as React from "react"
-import { Menu as MenuPrimitive } from "@base-ui/react/menu"
-import { cn } from "cn"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { ArrowRight01Icon, Tick02Icon } from "@hugeicons/core-free-icons"
+import * as React from 'react';
+import { Menu as MenuPrimitive } from '@base-ui/react/menu';
+import { cn } from 'cn';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { ArrowRight01Icon, Tick02Icon } from '@hugeicons/core-free-icons';
 
-function DropdownMenu({
-  ...props
-}) {
-  return <MenuPrimitive.Root data-slot="dropdown-menu" {...props} />
+function DropdownMenu({ ...props }) {
+  return <MenuPrimitive.Root data-slot="dropdown-menu" {...props} />;
 }
 
-function DropdownMenuPortal({
-  ...props
-}) {
-  return <MenuPrimitive.Portal data-slot="dropdown-menu-portal" {...props} />
+function DropdownMenuPortal({ ...props }) {
+  return <MenuPrimitive.Portal data-slot="dropdown-menu-portal" {...props} />;
 }
 
-function DropdownMenuTrigger({
-  ...props
-}) {
-  return <MenuPrimitive.Trigger data-slot="dropdown-menu-trigger" {...props} />
+function DropdownMenuTrigger({ ...props }) {
+  return <MenuPrimitive.Trigger data-slot="dropdown-menu-trigger" {...props} />;
 }
 
 function DropdownMenuContent({
-  align = "start",
+  align = 'start',
   alignOffset = 0,
-  side = "bottom",
+  side = 'bottom',
   sideOffset = 4,
   className,
   ...props
@@ -41,44 +35,36 @@ function DropdownMenuContent({
       >
         <MenuPrimitive.Popup
           data-slot="dropdown-menu-content"
-          className={cn("z-50 max-h-(--available-height) w-(--anchor-width) min-w-32 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-lg bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 outline-none data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:overflow-hidden data-closed:fade-out-0 data-closed:zoom-out-95", className )}
+          className={cn(
+            'z-50 max-h-(--available-height) w-(--anchor-width) min-w-32 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-lg bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 outline-none data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:overflow-hidden data-closed:fade-out-0 data-closed:zoom-out-95',
+            className
+          )}
           {...props}
         />
       </MenuPrimitive.Positioner>
     </MenuPrimitive.Portal>
-  )
+  );
 }
 
-function DropdownMenuGroup({
-  ...props
-}) {
-  return <MenuPrimitive.Group data-slot="dropdown-menu-group" {...props} />
+function DropdownMenuGroup({ ...props }) {
+  return <MenuPrimitive.Group data-slot="dropdown-menu-group" {...props} />;
 }
 
-function DropdownMenuLabel({
-  className,
-  inset,
-  ...props
-}) {
+function DropdownMenuLabel({ className, inset, ...props }) {
   return (
     <MenuPrimitive.GroupLabel
       data-slot="dropdown-menu-label"
       data-inset={inset}
       className={cn(
-        "px-2 py-1.5 text-xs text-muted-foreground data-inset:pl-7.5",
+        'px-2 py-1.5 text-xs text-muted-foreground data-inset:pl-7.5',
         className
       )}
       {...props}
     />
-  )
+  );
 }
 
-function DropdownMenuItem({
-  className,
-  inset,
-  variant = "default",
-  ...props
-}) {
+function DropdownMenuItem({ className, inset, variant = 'default', ...props }) {
   return (
     <MenuPrimitive.Item
       data-slot="dropdown-menu-item"
@@ -90,21 +76,14 @@ function DropdownMenuItem({
       )}
       {...props}
     />
-  )
+  );
 }
 
-function DropdownMenuSub({
-  ...props
-}) {
-  return <MenuPrimitive.SubmenuRoot data-slot="dropdown-menu-sub" {...props} />
+function DropdownMenuSub({ ...props }) {
+  return <MenuPrimitive.SubmenuRoot data-slot="dropdown-menu-sub" {...props} />;
 }
 
-function DropdownMenuSubTrigger({
-  className,
-  inset,
-  children,
-  ...props
-}) {
+function DropdownMenuSubTrigger({ className, inset, children, ...props }) {
   return (
     <MenuPrimitive.SubmenuTrigger
       data-slot="dropdown-menu-sub-trigger"
@@ -116,15 +95,19 @@ function DropdownMenuSubTrigger({
       {...props}
     >
       {children}
-      <HugeiconsIcon icon={ArrowRight01Icon} strokeWidth={2} className="ml-auto" />
+      <HugeiconsIcon
+        icon={ArrowRight01Icon}
+        strokeWidth={2}
+        className="ml-auto"
+      />
     </MenuPrimitive.SubmenuTrigger>
-  )
+  );
 }
 
 function DropdownMenuSubContent({
-  align = "start",
+  align = 'start',
   alignOffset = -3,
-  side = "right",
+  side = 'right',
   sideOffset = 0,
   className,
   ...props
@@ -132,14 +115,17 @@ function DropdownMenuSubContent({
   return (
     <DropdownMenuContent
       data-slot="dropdown-menu-sub-content"
-      className={cn("w-auto min-w-32 rounded-lg bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className )}
+      className={cn(
+        'w-auto min-w-32 rounded-lg bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95',
+        className
+      )}
       align={align}
       alignOffset={alignOffset}
       side={side}
       sideOffset={sideOffset}
       {...props}
     />
-  )
+  );
 }
 
 function DropdownMenuCheckboxItem({
@@ -170,26 +156,19 @@ function DropdownMenuCheckboxItem({
       </span>
       {children}
     </MenuPrimitive.CheckboxItem>
-  )
+  );
 }
 
-function DropdownMenuRadioGroup({
-  ...props
-}) {
+function DropdownMenuRadioGroup({ ...props }) {
   return (
     <MenuPrimitive.RadioGroup
       data-slot="dropdown-menu-radio-group"
       {...props}
     />
-  )
+  );
 }
 
-function DropdownMenuRadioItem({
-  className,
-  children,
-  inset,
-  ...props
-}) {
+function DropdownMenuRadioItem({ className, children, inset, ...props }) {
   return (
     <MenuPrimitive.RadioItem
       data-slot="dropdown-menu-radio-item"
@@ -210,36 +189,30 @@ function DropdownMenuRadioItem({
       </span>
       {children}
     </MenuPrimitive.RadioItem>
-  )
+  );
 }
 
-function DropdownMenuSeparator({
-  className,
-  ...props
-}) {
+function DropdownMenuSeparator({ className, ...props }) {
   return (
     <MenuPrimitive.Separator
       data-slot="dropdown-menu-separator"
-      className={cn("-mx-1 my-1 h-px bg-border/50", className)}
+      className={cn('-mx-1 my-1 h-px bg-border/50', className)}
       {...props}
     />
-  )
+  );
 }
 
-function DropdownMenuShortcut({
-  className,
-  ...props
-}) {
+function DropdownMenuShortcut({ className, ...props }) {
   return (
     <span
       data-slot="dropdown-menu-shortcut"
       className={cn(
-        "ml-auto text-[0.625rem] tracking-widest text-muted-foreground group-focus/dropdown-menu-item:text-accent-foreground",
+        'ml-auto text-[0.625rem] tracking-widest text-muted-foreground group-focus/dropdown-menu-item:text-accent-foreground',
         className
       )}
       {...props}
     />
-  )
+  );
 }
 
 export {
@@ -258,4 +231,4 @@ export {
   DropdownMenuSub,
   DropdownMenuSubTrigger,
   DropdownMenuSubContent,
-}
+};

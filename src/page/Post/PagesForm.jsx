@@ -1,28 +1,28 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import Levels from "./components/levels/Levels";
-import Front from "./components/front/Front";
-import { Button } from "@/components/ui/button";
-import { supabase } from "../../lib/supabase";
+import Levels from './components/levels/Levels';
+import Front from './components/front/Front';
+import { Button } from '@/components/ui/button';
+import { supabase } from '../../lib/supabase';
 
 const DefaultFormatBook = {
-  title: "",
-  src: "",
-  key: "",
-  author: "",
-  publishYear: "",
-  notes: "",
+  title: '',
+  src: '',
+  key: '',
+  author: '',
+  publishYear: '',
+  notes: '',
 };
 
 const DefaultMain = {
-  name: "",
-  takeaway: "",
+  name: '',
+  takeaway: '',
   books: [structuredClone(DefaultFormatBook)],
 };
 
 const PagesForm = () => {
-  const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
+  const [title, setTitle] = useState('');
+  const [desc, setDesc] = useState('');
   const [cover, setCover] = useState(null);
 
   const [levels, setLevels] = useState([structuredClone(DefaultMain)]);
@@ -35,8 +35,8 @@ const PagesForm = () => {
               ...level,
               [field]: value,
             }
-          : level,
-      ),
+          : level
+      )
     );
   };
   const addLevel = () => {
@@ -86,10 +86,10 @@ const PagesForm = () => {
                   ...book,
                   [field]: value,
                 }
-              : book,
+              : book
           ),
         };
-      }),
+      })
     );
   };
   const addBook = (levelIndex, book) => {
@@ -99,18 +99,19 @@ const PagesForm = () => {
           return level;
         }
 
-        const firstBookIsEmpty = level.books.length === 1 && !level.books[0].key;
+        const firstBookIsEmpty =
+          level.books.length === 1 && !level.books[0].key;
 
         const newBook = {
           ...structuredClone(book),
-          notes: "",
+          notes: '',
         };
 
         return {
           ...level,
           books: firstBookIsEmpty ? [newBook] : [...level.books, newBook],
         };
-      }),
+      })
     );
   };
   const deleteBook = (levelIndex, bookIndex) => {
@@ -124,15 +125,20 @@ const PagesForm = () => {
           ...level,
           books: level.books.filter((_, index) => index !== bookIndex),
         };
-      }),
+      })
     );
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!title.trim() || !cover || levels.length === 0 || levels.some((level) => !level.name.trim())) {
-      console.error("¡Te falta rellenar algunos datos!");
+    if (
+      !title.trim() ||
+      !cover ||
+      levels.length === 0 ||
+      levels.some((level) => !level.name.trim())
+    ) {
+      console.error('¡Te falta rellenar algunos datos!');
       return;
     }
 
@@ -141,35 +147,39 @@ const PagesForm = () => {
     } = await supabase.auth.getUser();
 
     if (!user) {
-      console.error("No hay usuario autenticado");
+      console.error('No hay usuario autenticado');
       return;
     }
 
-    const extension = cover.name.split(".").pop();
+    const extension = cover.name.split('.').pop();
 
     const filePath = `${user.id}/${crypto.randomUUID()}.${extension}`;
 
-    const { error: uploadError } = await supabase.storage.from("chart-covers").upload(filePath, cover);
+    const { error: uploadError } = await supabase.storage
+      .from('chart-covers')
+      .upload(filePath, cover);
 
     if (uploadError) {
-      console.error("Error subiendo portada:", uploadError);
+      console.error('Error subiendo portada:', uploadError);
       return;
     }
 
-    const { data: publicUrlData } = supabase.storage.from("chart-covers").getPublicUrl(filePath);
+    const { data: publicUrlData } = supabase.storage
+      .from('chart-covers')
+      .getPublicUrl(filePath);
 
     const coverUrl = publicUrlData.publicUrl;
 
     if (!coverUrl) {
-      console.error("No se pudo obtener la URL de la portada");
+      console.error('No se pudo obtener la URL de la portada');
 
       /* LIMPIAR ARCHIVO SUBIDO */
-      await supabase.storage.from("chart-covers").remove([filePath]);
+      await supabase.storage.from('chart-covers').remove([filePath]);
 
       return;
     }
 
-    const { error } = await supabase.from("chart").insert({
+    const { error } = await supabase.from('chart').insert({
       user_id: user.id,
       title: title.trim(),
       description: desc,
@@ -178,14 +188,14 @@ const PagesForm = () => {
     });
 
     if (error) {
-      console.error("Error creando chart:", error);
+      console.error('Error creando chart:', error);
 
-      await supabase.storage.from("chart-covers").remove([filePath]);
+      await supabase.storage.from('chart-covers').remove([filePath]);
 
       return;
     }
 
-    console.log("Chart creado correctamente");
+    console.log('Chart creado correctamente');
   };
 
   const [step, setStep] = useState(0);
@@ -193,8 +203,20 @@ const PagesForm = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="mx-auto w-full max-w-3xl px-4 py-8">
-        {step === 0 && <Front title={title} desc={desc} cover={cover} setTitle={setTitle} setDesc={setDesc} setCover={setCover} />}
+      <form
+        onSubmit={handleSubmit}
+        className="mx-auto w-full max-w-3xl px-4 py-8"
+      >
+        {step === 0 && (
+          <Front
+            title={title}
+            desc={desc}
+            cover={cover}
+            setTitle={setTitle}
+            setDesc={setDesc}
+            setCover={setCover}
+          />
+        )}
 
         {step > 0 && (
           <Levels
@@ -210,7 +232,12 @@ const PagesForm = () => {
         )}
 
         <div className="mt-8 flex justify-between">
-          <Button type="button" variant="outline" disabled={step === 0} onClick={() => setStep((prev) => prev - 1)}>
+          <Button
+            type="button"
+            variant="outline"
+            disabled={step === 0}
+            onClick={() => setStep((prev) => prev - 1)}
+          >
             Atrás
           </Button>
 
